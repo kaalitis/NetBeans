@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>baiti</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <script>
+        function apr(){
+            var sekundes = document.getElementById("inp").value;
+            if(document.getElementById("KiB").checked){
+                document.getElementById("text").value = sekundes*3051;
+            }else{
+                document.getElementById("text").value = sekundes*3125;
+            }        
+        }
+        function clicks() {
+            console.log("test");
+            document.getElementById("text").value = "";
+            document.getElementById("inp").value = "";
+            var ele = document.getElementsByName("Gogo");
+            for(var i=0;i<ele.length;i++)
+            ele[i].checked = false;
+        }          
+    </script>
+        <p>Aprēķināt cik daudz informācijas var lejupielādēt</p>
+        <p><input onfocus='clicks()' type="text" id="inp">sekundēs, ja interneta ātrums ir 25 Mbps.</p>
+        <p>Atbilde</p>
+        <input type="text" id="text">
+        <input onclick="apr()" type="radio" name="Gogo" id="KiB">
+        <label for="KiB">KiB</label>
+        <input onclick="apr()" type="radio" name="Gogo" id="KB">
+        <label for="KB">KB</label>
+    </body>
+</html>
+
